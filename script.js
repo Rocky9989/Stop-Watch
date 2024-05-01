@@ -27,22 +27,22 @@ document.getElementById("reset-Timer").addEventListener("click", () => {
   // Reset the time values to zero
   [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
   // Updating the timer display to show "00 : 00 : 00 : 000"
-  timerRef.innerHTML = "00 : 00 : 00 : 000";
+  timerRef.textContent = "00 : 00 : 00 : 000";
 });
 
 function displayTimer() {
   // Increment the milliseconds value by 10
   milliseconds += 10;
   // If the milliseconds value reaches 1000, reset it to zero and increment the seconds value
-  if (milliseconds == 1000) {
+  if (milliseconds === 1000) {
     milliseconds = 0;
     seconds++;
     // If the seconds value reaches 60, reset it to zero and increment the minutes value
-    if (seconds == 60) {
+    if (seconds === 60) {
       seconds = 0;
       minutes++;
       // If the minutes value reaches 60, reset it to zero and increment the hours value
-      if (minutes == 60) {
+      if (minutes === 60) {
         minutes = 0;
         hours++;
       }
@@ -61,5 +61,5 @@ function displayTimer() {
     ms = milliseconds;
   }
   // Update the timer display with the formatted time values
-  timerRef.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
+  timerRef.textContent = `${h} : ${m} : ${s} : ${ms}`;
 }
